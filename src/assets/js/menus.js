@@ -81,11 +81,11 @@
 
 
 // SmartMenus init
-$(function() {
-  $('#main-menu').smartmenus({
-	mainMenuSubOffsetX: 1,
-	mainMenuSubOffsetY: -0,
-    subMenusSubOffsetX: 1,
-    subMenusSubOffsetY: -0
-  });
-});
+// $(function() {
+//   $('#main-menu').smartmenus({
+// 	mainMenuSubOffsetX: 1,
+// 	mainMenuSubOffsetY: -0,
+//     subMenusSubOffsetX: 1,
+//     subMenusSubOffsetY: -0
+//   });
+// });
