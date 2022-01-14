@@ -9,52 +9,54 @@ declare let $: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'anytimejob-frontend';
   ngOnInit() {
-    $('nav').coreNavigation({
-      menuPosition: "right",
-		  container: true,	
-    	mode: 'sticky',	
+    $(document).ready(function() {
+      $('nav').coreNavigation({
+        menuPosition: "right",
+        container: true,	
+        mode: 'sticky',	
 
-      onStartSticky: function(){
-        console.log('Start Sticky');
-		  },
-		  
-      onEndSticky: function(){
-			  console.log('End Sticky');
-		  },
-		
-		  dropdownEvent: 'hover',
-		  
-      onOpenDropdown: function(){
-			  console.log('open');
-		  },
-
-		  onCloseDropdown: function(){
-			  console.log('close');
-		  },
+        onStartSticky: function(){
+          console.log('Start Sticky');
+        },
+        
+        onEndSticky: function(){
+          console.log('End Sticky');
+        },
       
-      onInit: function(){
-        console.log('Init coreNav');
-      },
+        dropdownEvent: 'hover',
+        
+        onOpenDropdown: function(){
+          console.log('open');
+        },
 
-      onOpenMegaMenu: function(){
-			  console.log('Open Megamenu');
-		  },
+        onCloseDropdown: function(){
+          console.log('close');
+        },
+        
+        onInit: function(){
+          console.log('Init coreNav');
+        },
 
-		  onCloseMegaMenu: function(){
-			  console.log('Close Megamenu');
-		  }	
-    });
+        onOpenMegaMenu: function(){
+          console.log('Open Megamenu');
+        },
+
+        onCloseMegaMenu: function(){
+          console.log('Close Megamenu');
+        }	
+      }); 
     
-
-    // SmartMenus init
-    $('#main-menu').smartmenus({
-      mainMenuSubOffsetX: 1,
-      mainMenuSubOffsetY: -0,
-      subMenusSubOffsetX: 1,
-      subMenusSubOffsetY: -0
+      // SmartMenus init
+      $('#main-menu').smartmenus({
+        mainMenuSubOffsetX: 1,
+        mainMenuSubOffsetY: -0,
+        subMenusSubOffsetX: 1,
+        subMenusSubOffsetY: -0
+      });
     });
 
 
