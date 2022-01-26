@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row justify-content-end">
                 <div class="col-xl-2 col-md-6 col-12 nav-header">
-                    <a href="index.php" class="brand text-center">
+                    <a href="index" class="brand text-center">
                         <img src="../../assets/images/logo-home.svg" alt=""/>
                     </a>
                     <button class="toggle-bar mt-20">
@@ -24,14 +24,17 @@
                 <div class="col-xl-2 col-md-6 col-12">
                     <ul class="menu mt-xl-40 float-xl-end">
                         <li>
-                            <a href="post-job.php">Post Job</a>
+                            <a href="post-job">Post Job</a>
                         </li>
                         <li>
-                            <a href="help.php">Help</a>
+                            <a href="help">Help</a>
                         </li>
-
-                        <li>
-                            <a href="login.php"  class="me-0">Login</a>
+                        <li class="dropdown">
+                            <a href="#">My Account</a>
+                            <ul class="dropdown-menu">
+                                <li><a routerLink="/profile">Edit Profile</a></li>
+                                <li><a routerLink="/login" routerLinkActive="active" (click)="logout()" class="me-0">{{(user?.name) ? 'Logout' : 'Login'}}</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -41,21 +44,21 @@
             <div class="row justify-content-start">
                 <div class="col-lg-4 col-md-5 col-12">
                     <ul id="main-menu" class="sm sm-blue text-white ">
-                        <li><a href="services.php" class="ps-0">Yard Work</a></li>
-                        <li><a href="services.php">TV Mounting</a></li>
-                        <li><a href="services.php">Handyman</a></li>
-                        <li><a href="services.php">Help Moving</a></li>
-                        <li><a href="services.php">Delivery Service</a></li>
-                        <li><a href="services.php">Hang Pictures</a></li>
-                        <li><a href="services.php">Lawn Care Services</a></li>
-                        <li><a href="services.php">Painting</a></li>
-                        <li><a href="services.php">Grocery Shopping & Delivery</a></li>
-                        <li><a href="services.php">Furniture Assembly</a></li>
-                        <li><a href="services.php">Lighting Installation</a></li>
-                        <li><a href="services.php">Virtual & Online Tasks</a></li>
-                        <li><a href="services.php">Contactless Tasks</a></li>
-                        <li><a href="services.php">Volunteer Help</a></li>
-                        <li><a href="services.php">IKEA Services</a></li>
+                        <li><a href="services" class="ps-0">Yard Work</a></li>
+                        <li><a href="services">TV Mounting</a></li>
+                        <li><a href="services">Handyman</a></li>
+                        <li><a href="services">Help Moving</a></li>
+                        <li><a href="services">Delivery Service</a></li>
+                        <li><a href="services">Hang Pictures</a></li>
+                        <li><a href="services">Lawn Care Services</a></li>
+                        <li><a href="services">Painting</a></li>
+                        <li><a href="services">Grocery Shopping & Delivery</a></li>
+                        <li><a href="services">Furniture Assembly</a></li>
+                        <li><a href="services">Lighting Installation</a></li>
+                        <li><a href="services">Virtual & Online Tasks</a></li>
+                        <li><a href="services">Contactless Tasks</a></li>
+                        <li><a href="services">Volunteer Help</a></li>
+                        <li><a href="services">IKEA Services</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-2 col-12  w-auto">
@@ -114,3 +117,4 @@
         </div>
 	</nav>
 </header>
+

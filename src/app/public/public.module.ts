@@ -6,20 +6,23 @@ import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [
-    PublicComponent,
+  declarations: [   
     HeaderComponent,
     FooterComponent,
+    PublicComponent,
     LoginComponent,
     RegisterComponent
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PublicModule { }

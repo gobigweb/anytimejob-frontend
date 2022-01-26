@@ -34,8 +34,8 @@
             <div class="col-lg-4 col-12">
                 <div class="box box-body mb-0 p-0 border-0">
                     <ul class="nav nav-tabs nav-fill border-0" role="tablist">
-                        <li class="nav-item"> <a class="nav-link py-10 m-0 rounded-0 border border-0" data-bs-toggle="tab" routerLink="/login" role="tab">Login</a> </li>
-                        <li class="nav-item"> <a class="nav-link active py-10 m-0 rounded-0 border border-0" data-bs-toggle="tab" routerLink="/register" role="tab">Register</a> </li>
+                        <li class="nav-item"> <a class="nav-link py-10 m-0 rounded-0 border border-0" routerLink="/login">Login</a> </li>
+                        <li class="nav-item"> <a class="nav-link active py-10 m-0 rounded-0 border border-0"  routerLink="/register">Register</a> </li>
                     </ul>
                 </div>
                 <div class="box box-body mb-0">
@@ -48,29 +48,29 @@
                                     <p class="mb-0">Register a New Membership</p>							
                                 </div>
                                 <div class="p-15">
-                                    <form action="index.php" method="post">
+                                    <form (submit)="submit()" method="post">
                                         <div class="form-group">
                                             <div class="input-group mb-15">
                                                 <span class="input-group-text bg-transparent"><i class="ti-user"></i></span>
-                                                <input type="text" class="form-control ps-15 bg-transparent" placeholder="Full Name">
+                                                <input [(ngModel)]="name" name="name" type="text" class="form-control ps-15 bg-transparent" placeholder="Full Name">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group mb-15">
                                                 <span class="input-group-text bg-transparent"><i class="ti-email"></i></span>
-                                                <input type="email" class="form-control ps-15 bg-transparent" placeholder="Email">
+                                                <input [(ngModel)]="email" name="email" type="email" class="form-control ps-15 bg-transparent" placeholder="Email">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group mb-15">
                                                 <span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
-                                                <input type="password" class="form-control ps-15 bg-transparent" placeholder="Password">
+                                                <input [(ngModel)]="password" name="password" type="password" class="form-control ps-15 bg-transparent" placeholder="Password">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="input-group mb-15">
                                                 <span class="input-group-text bg-transparent"><i class="ti-lock"></i></span>
-                                                <input type="password" class="form-control ps-15 bg-transparent" placeholder="Retype Password">
+                                                <input [(ngModel)]="passwordConfirmation" name="passwordConfirmation"  type="password" class="form-control ps-15 bg-transparent" placeholder="Retype Password">
                                             </div>
                                         </div>
                                         <div class="row">
