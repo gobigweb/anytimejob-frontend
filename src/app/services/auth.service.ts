@@ -20,11 +20,11 @@ export class AuthService {
   }
 
   user(): Observable<User> {
-    return this.http.post<User>(`${environment.api}/user`,'');
+    return this.http.get<User>(`${environment.api}/user`);
   }
 
   logout(): Observable<void> {
-    return this.http.post<void>(`${environment.api}/logout`,'');
+    return this.http.post<void>(`${environment.api}/logout`,{});
   }
 
 

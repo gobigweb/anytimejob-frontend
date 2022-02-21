@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   submit(): void {
     this.authService.login(this.form.getRawValue())
-      .subscribe(() => this.router.navigate(['/']));
+      .subscribe(() => this.router.navigate(['/post-job']));
   }
 
 }
