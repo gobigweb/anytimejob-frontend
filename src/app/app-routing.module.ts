@@ -6,6 +6,8 @@ import { RegisterComponent } from './public/register/register.component';
 import { PostJobComponent } from './secure/post-job/post-job.component';
 import { ProfileComponent } from './secure/profile/profile.component';
 import { SecureComponent } from './secure/secure.component';
+import { AfterLoginService } from './services/after-login.service';
+import { BeforeLoginService } from './services/before-login.service';
 
 const routes: Routes = [
 
@@ -14,16 +16,16 @@ const routes: Routes = [
     component: SecureComponent,
     children: [
       {path: '', redirectTo: 'post-job', pathMatch: 'full'},
-      {path: 'post-job', component: PostJobComponent},
-      {path: 'profile', component: ProfileComponent},
+      {path: 'post-job', component: PostJobComponent, canActivate: [AfterLoginService]},
+      {path: 'profile', component: ProfileComponent, canActivate: [AfterLoginService]},
     ]
   },
   {
     path: '',
     component: PublicComponent,
     children: [
-      {path: 'login', component: LoginComponent},
-      {path: 'register', component: RegisterComponent},
+      {path: 'login', component: LoginComponent, canActivate: [BeforeLoginService]},
+      {path: 'register', component: RegisterComponent, canActivate: [BeforeLoginService]},
     ]
   },
 ];

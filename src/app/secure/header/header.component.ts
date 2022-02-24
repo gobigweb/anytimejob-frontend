@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { User } from 'src/app/interfaces/user';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/token.service';
+import { AuthenticationStateService } from 'src/app/services/authentication-state.service';
 
 declare let $: any;
 @Component({
@@ -9,10 +11,18 @@ declare let $: any;
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input('user') user!: User;
-  constructor(private authService: AuthService) { }
+  public loggedIn: boolean = false;
+
+  constructor(
+    private router: Router, 
+    private authService: AuthService,    
+    private tokenService :TokenService,
+    public authenticationStateService: AuthenticationStateService
+  ) { }
 
   ngOnInit(): void {
+    this.authenticationStateService.authState.subscribe(value => this.loggedIn = value);
+    
     $(document).ready(function() {
       $('nav').coreNavigation({
         menuPosition: "right",
@@ -60,10 +70,14 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-  logout() : void{
-    this.authService.logout().subscribe(() => {
-      console.log('success');
-    });
+  logout(event: MouseEvent ){
+    event.preventDefault();
+    this.tokenService.destroyToken();
+    this.authenticationStateService.changeAuthState(false);    
+    this.router.navigate(['/login']);
+
   }
+
+  
 
 }

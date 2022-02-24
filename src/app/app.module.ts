@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { PublicModule } from './public/public.module';
 import { SecureModule } from './secure/secure.module';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import { AuthService } from './services/auth.service';
 import { CredentialInterceptor } from './interceptors/credential.interceptor';
 @NgModule({
   declarations: [

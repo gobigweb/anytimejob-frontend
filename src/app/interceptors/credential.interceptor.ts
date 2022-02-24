@@ -6,15 +6,21 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { TokenService } from 'src/app/services/token.service';
 
 @Injectable()
 export class CredentialInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(
+    private tokenService :TokenService
+  ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    const jwtHeaderToken = this.tokenService.getJwtToken();
     const req = request.clone({
-      withCredentials: true
+      setHeaders: {
+        Authorization: "Bearer " + jwtHeaderToken
+      }
     });
     return next.handle(req);
   }

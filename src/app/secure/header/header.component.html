@@ -33,7 +33,8 @@
                             <a href="#">My Account</a>
                             <ul class="dropdown-menu">
                                 <li><a routerLink="/profile">Edit Profile</a></li>
-                                <li><a routerLink="/login" routerLinkActive="active" (click)="logout()" class="me-0">{{(user?.name) ? 'Logout' : 'Login'}}</a></li>
+                                <li><a routerLink="/login" class="me-0" *ngIf="!loggedIn">Login</a></li>                                
+                                <li><a href="#"  class="me-0" (click)="logout($event)" *ngIf="loggedIn">Logout</a></li>
                             </ul>
                         </li>
                     </ul>
